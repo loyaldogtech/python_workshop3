@@ -1,9 +1,15 @@
-print("      === DonateMe Homepage ===     ")
-print("-----------------------------------------")
-print("| 1.   Login     | 2.   Register        |")
-print("-----------------------------------------")
-print("| 3.   Donate    | 4.   Show Donations  |")
-print("-----------------------------------------")
-print("|        5.   Exit                      |")
-print("-----------------------------------------")
-print("You must be logged in to donate")
+from donations_pkg.homepage import show_homepage
+
+database = {
+    "admin": "password123",
+}
+
+donations = []
+
+authorized_user = ""
+
+show_homepage()
+if authorized_user == "":
+    print("You must be logged in to donate")
+else:
+    print(f"Logged in as {authorized_user}")
