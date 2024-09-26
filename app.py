@@ -1,3 +1,4 @@
+from donations_pkg.user import login
 from donations_pkg.homepage import show_homepage
 
 database = {
@@ -15,9 +16,11 @@ else:
     print(f"Logged in as {authorized_user}")
 
 while True:
-    choice = input("What would you like to do? ").lower()
+    choice = input("Choose an option: ")
     if choice == "1":
-        print("TODO: Write Login Functionality")
+        username = input("\nEnter username: ")
+        password = input("Enter Password: ")
+        authorized_user = login(database, username, password)
     elif choice == "2":
         print("TODO: Write Register Functionality")
     elif choice == "3":
