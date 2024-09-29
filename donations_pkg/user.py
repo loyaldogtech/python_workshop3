@@ -2,8 +2,8 @@ from donations_pkg.homepage import show_homepage
 
 def login(database, username, password):
     username = username.lower()
-    if username in database:
-        if database[username] == password:
+    if username in [key.lower() for key in database]:
+        if database[[key for key in database if key.lower() == username][0]] == password:
             print(f"\nWelcome back, {username}!\n")
             show_homepage()
             print(f"Logged in as: {username}.")
@@ -17,7 +17,7 @@ def login(database, username, password):
 
 def register(database, username):
     username = username.lower()
-    if username in database:
+    if username in [key.lower() for key in database]:
         print("Username already exists")
         return ""
     else:
