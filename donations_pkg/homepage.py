@@ -14,3 +14,10 @@ def donate(username):
     donation_string = f"{username} donated ${donation_amt}"
     print("Thank you for your donation!")
     return donation_string
+
+def show_donations(donations):
+    if len(donations) == 0:
+        print("Currently, there are no donations.")
+    else:
+        for d in donations:
+            print(d)
